@@ -12,7 +12,7 @@ public class HsCipherTest {
     @Test
     public void testGenerate16Key() {
         // preparation
-        var tested = new HsCipher();
+        var tested = new HsCipherKey();
         // test
         var result = tested.generate16Key();
         // assertion
@@ -22,7 +22,7 @@ public class HsCipherTest {
     @Test
     public void testGenerate32Key() {
         // preparation
-        var tested = new HsCipher();
+        var tested = new HsCipherKey();
         // test
         var result = tested.generate32Key();
         // assertion
@@ -32,7 +32,7 @@ public class HsCipherTest {
     @Test
     public void testGenerate64Key() {
         // preparation
-        var tested = new HsCipher();
+        var tested = new HsCipherKey();
         // test
         var result = tested.generate64Key();
         // assertion
@@ -42,7 +42,7 @@ public class HsCipherTest {
     @Test
     public void testGenerate128Key() {
         // preparation
-        var tested = new HsCipher();
+        var tested = new HsCipherKey();
         // test
         var result = tested.generate128Key();
         // assertion
@@ -52,7 +52,7 @@ public class HsCipherTest {
     @Test
     public void testGenerate256Key() {
         // preparation
-        var tested = new HsCipher();
+        var tested = new HsCipherKey();
         // test
         var result = tested.generate128Key();
         // assertion
