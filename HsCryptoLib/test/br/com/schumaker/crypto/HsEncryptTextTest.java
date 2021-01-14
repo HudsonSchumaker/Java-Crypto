@@ -25,6 +25,5 @@ public class HsEncryptTextTest {
         System.out.println(result);
         assertNotNull(result);
         assertNotEquals(text, result);
-        
     }
 }

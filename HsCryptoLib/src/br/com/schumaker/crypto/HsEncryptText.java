@@ -1,7 +1,6 @@
 package br.com.schumaker.crypto;
 
 import java.security.Key;
-import java.util.Arrays;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -21,7 +20,7 @@ public class HsEncryptText {
             final Cipher cipher = Cipher.getInstance("AES");
             cipher.init(cipherMode, secretKey);
             final byte[] outputBytes = cipher.doFinal(inputText.getBytes());
-            return Arrays.toString(outputBytes);
+            return new String(outputBytes, "UTF8");
         } catch (Exception ex) {
             throw new RuntimeException("Error", ex);
         }
