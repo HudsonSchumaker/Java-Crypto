@@ -14,7 +14,7 @@ public class HsEncryptTextTest {
     public void testEncrypt() {
         // preparation
         var keyGen = new HsCipherKey();
-        var key = keyGen.generate16Key();
+        var key = keyGen.generate32Key();
         var tested = new HsEncryptText();
         var text = "hello you";
         

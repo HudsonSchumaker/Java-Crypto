@@ -22,18 +22,6 @@ public class HsCipherKey {
         return createKey(32);
     }
     
-    public String generate64Key() {
-        return createKey(64);
-    }
-    
-    public String generate128Key() {
-        return createKey(128);
-    }
-    
-    public String generate256Key() {
-        return createKey(256);
-    }
-
     private String createKey(final int size) {
         final Random r = new Random(System.currentTimeMillis());
         final char[] id = new char[size];
