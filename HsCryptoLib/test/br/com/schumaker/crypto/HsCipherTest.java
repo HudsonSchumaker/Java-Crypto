@@ -28,5 +28,15 @@ public class HsCipherTest {
         // assertion
         Assert.assertEquals(32, result.length()); 
     }
+    
+    @Test
+    public void testGenerate64Key() {
+        // preparation
+        var tested = new HsCipher();
+        // test
+        var result = tested.generate64Key();
+        // assertion
+        Assert.assertEquals(64, result.length()); 
+    }
             
 }
