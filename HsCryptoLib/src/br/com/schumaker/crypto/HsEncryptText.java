@@ -11,17 +11,17 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class HsEncryptText {
     
-    public void encrypt(final String key, final String inputText,  String outputText) {
-        this.doCrypto(1, key, inputText, outputText);
+    public String encrypt(final String key, final String inputText) {
+        return this.doCrypto(1, key, inputText);
     }
     
-    private void doCrypto(final int cipherMode, final String key, String inputText, String outputText) {
+    private String doCrypto(final int cipherMode, final String key, String inputText) {
         try {
             final Key secretKey = new SecretKeySpec(key.getBytes(), "AES");
             final Cipher cipher = Cipher.getInstance("AES");
             cipher.init(cipherMode, secretKey);
             final byte[] outputBytes = cipher.doFinal(inputText.getBytes());
-            outputText = Arrays.toString(outputBytes);
+            return Arrays.toString(outputBytes);
         } catch (Exception ex) {
             throw new RuntimeException("Error", ex);
         }
