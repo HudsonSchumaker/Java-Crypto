@@ -16,14 +16,16 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class HsEncryptText {
     
+    private static final String ALGORITHM = "AES";
+    
     public String encrypt(final String key, final String inputText) {
         return this.doCrypto(Cipher.ENCRYPT_MODE, key, inputText);
     }
     
     private String doCrypto(final int cipherMode, final String key, String inputText) {
         try {
-            final Key secretKey = new SecretKeySpec(key.getBytes(), "AES");
-            final Cipher cipher = Cipher.getInstance("AES");
+            final Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
+            final Cipher cipher = Cipher.getInstance(ALGORITHM);
             cipher.init(cipherMode, secretKey);
             final byte[] outputBytes = cipher.doFinal(inputText.getBytes());
             return new String(outputBytes, "UTF8");
