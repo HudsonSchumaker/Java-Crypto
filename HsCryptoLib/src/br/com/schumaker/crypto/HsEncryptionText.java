@@ -14,7 +14,7 @@ import javax.crypto.spec.SecretKeySpec;
  *
  * @author Hudson Schumaker
  */
-public class HsEncryptText {
+public class HsEncryptionText {
     
     private static final String ALGORITHM = "AES";
     
