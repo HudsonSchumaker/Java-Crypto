@@ -17,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class HsEncryptText {
     
     public String encrypt(final String key, final String inputText) {
-        return this.doCrypto(1, key, inputText);
+        return this.doCrypto(Cipher.ENCRYPT_MODE, key, inputText);
     }
     
     private String doCrypto(final int cipherMode, final String key, String inputText) {
