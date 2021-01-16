@@ -31,7 +31,7 @@ public class HsEncryptText {
             return new String(outputBytes, "UTF8");
         } catch (UnsupportedEncodingException | InvalidKeyException | NoSuchAlgorithmException 
                 | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException ex) {
-            throw new RuntimeException("Error", ex);
+            throw new RuntimeException("Encrypt error", ex);
         }
     }
 }
