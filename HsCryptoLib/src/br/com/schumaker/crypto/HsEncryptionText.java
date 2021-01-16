@@ -22,6 +22,10 @@ public class HsEncryptionText {
         return this.doCrypto(Cipher.ENCRYPT_MODE, key, inputText);
     }
     
+    public String decrypt(final String key, final String inputText) {
+         return this.doCrypto(Cipher.DECRYPT_MODE, key, inputText);
+    }
+    
     private String doCrypto(final int cipherMode, final String key, String inputText) {
         try {
             final Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
