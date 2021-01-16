@@ -30,7 +30,7 @@ public class HsEncryptionText {
     
     private String doEncrypt(final String key, String inputText) {
         try {
-            final Key secretKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), ALGORITHM);
+            final Key secretKey = new SecretKeySpec(this.decodeKey(key), ALGORITHM);
             final Cipher cipher = Cipher.getInstance(ALGORITHM);
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             final byte[] outputBytes = cipher.doFinal(inputText.getBytes(StandardCharsets.UTF_8));
@@ -44,7 +44,7 @@ public class HsEncryptionText {
     
     private String doDecrypt(final String key, String inputText) {
         try {
-            final Key secretKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), ALGORITHM);
+            final Key secretKey = new SecretKeySpec(this.decodeKey(key), ALGORITHM);
             final Cipher cipher = Cipher.getInstance(ALGORITHM);
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             final byte[] outputBytes = cipher.doFinal(Base64.getDecoder().decode(inputText));
@@ -54,5 +54,10 @@ public class HsEncryptionText {
                 | IllegalBlockSizeException | NoSuchPaddingException ex) {
             throw new RuntimeException("Decrypt Error", ex);
         }
+    }
+    
+    private byte[] decodeKey(final String key) {
+        byte[] decodedKey = Base64.getDecoder().decode(key);
+        return Arrays.copyOf(decodedKey, 16);
     }
 }
