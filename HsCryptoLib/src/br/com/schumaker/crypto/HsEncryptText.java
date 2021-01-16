@@ -1,7 +1,13 @@
 package br.com.schumaker.crypto;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
 import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -21,7 +27,8 @@ public class HsEncryptText {
             cipher.init(cipherMode, secretKey);
             final byte[] outputBytes = cipher.doFinal(inputText.getBytes());
             return new String(outputBytes, "UTF8");
-        } catch (Exception ex) {
+        } catch (UnsupportedEncodingException | InvalidKeyException | NoSuchAlgorithmException 
+                | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException ex) {
             throw new RuntimeException("Error", ex);
         }
     }
