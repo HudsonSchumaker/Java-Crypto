@@ -24,10 +24,10 @@ public class HsCipherKey {
     
     private String createKey(final int size) {
         final Random r = new Random(System.currentTimeMillis());
-        final char[] id = new char[size];
+        final char[] key = new char[size];
         for (int i = 0; i < size; ++i) {
-            id[i] = HsCipherKey.CHARS[r.nextInt(HsCipherKey.CHARS.length)];
+            key[i] = HsCipherKey.CHARS[r.nextInt(HsCipherKey.CHARS.length)];
         }
-        return new String(id);
+        return new String(key);
     }
 }
