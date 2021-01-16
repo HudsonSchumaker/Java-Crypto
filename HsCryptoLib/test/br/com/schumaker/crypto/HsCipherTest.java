@@ -17,16 +17,5 @@ public class HsCipherTest {
         var result = tested.generate16Key();
         // assertion
         Assert.assertEquals(16, result.length()); 
-    }
-    
-    @Test
-    public void testGenerate32Key() {
-        // preparation
-        var tested = new HsCipherKey();
-        // test
-        var result = tested.generate32Key();
-        // assertion
-        Assert.assertEquals(32, result.length()); 
-    }
-          
+    }          
 }
