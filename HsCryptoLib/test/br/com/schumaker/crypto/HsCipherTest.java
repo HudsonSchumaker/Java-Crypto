@@ -14,8 +14,8 @@ public class HsCipherTest {
         // preparation
         var tested = new HsCipherKey();
         // test
-        var result = tested.generate16Key();
+        var result = tested.generate256Key();
         // assertion
-        Assert.assertEquals(16, result.length()); 
+        Assert.assertEquals(44, result.length()); 
     }          
 }
