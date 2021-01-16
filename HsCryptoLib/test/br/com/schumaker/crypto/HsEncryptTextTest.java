@@ -21,7 +21,6 @@ public class HsEncryptTextTest {
         var result = tested.encrypt(key, text);
         
         // assertion
-        System.out.println(result);
         assertNotNull(result);
         assertNotEquals(text, result);
     }
