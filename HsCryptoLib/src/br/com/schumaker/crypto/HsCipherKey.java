@@ -20,11 +20,12 @@ public class HsCipherKey {
     
     private String createKey() {
         try {
+            int keyBitSize = 256;
             KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
             SecureRandom secureRandom = new SecureRandom();
-            int keyBitSize = 256;
             keyGenerator.init(keyBitSize, secureRandom);
-            
+
+            // Generate the key
             SecretKey secretKey = keyGenerator.generateKey();
             
             return Base64.getEncoder().encodeToString(secretKey.getEncoded());
